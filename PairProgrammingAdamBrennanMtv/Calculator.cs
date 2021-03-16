@@ -8,17 +8,23 @@ namespace PairProgrammingAdamBrennanMtv
 {
     class Calculator
     {
+        // set properties of the Calculator class
+        // get; means property is readable by other classes
+        // set; means other classes can change the value of the property
         public int Input1 { get; set; }
         public int Input2 { get; set; }
         public char Operator { get; set; }
 
         // Methods
+
+        // takes in input from user and turns it into a string array
         public void ParseInput(string input)
         {
             string[] splitInput = input.Split(' ');
             PopulateCalcValues(splitInput);
         }
 
+        // assigns the values in the array to the properties of this class
         private void PopulateCalcValues(string[] splitInput)
         {
             Input1 = int.Parse(splitInput[0]);
@@ -27,6 +33,7 @@ namespace PairProgrammingAdamBrennanMtv
             
         }
 
+        // calculate and return the result as int
         public int Calculate()
         {
             switch(Operator)
